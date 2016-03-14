@@ -1,5 +1,5 @@
 //To use this import properly, you need to execute this command:
-//sudo pip install TheBlueAlliance
+//python -m pip install TheBlueAlliance
 from TheBlueAlliance import *
 
 print("Zach is scrub")
