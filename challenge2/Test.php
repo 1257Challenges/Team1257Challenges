@@ -22,17 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $nameErr = "Only letters and white space allowed"; 
      }
    }
-  
-     
-   if (empty($_POST["website"])) {
-     $website = "";
+   
+   if (empty($_POST["number"])) {
+     $numberErr = "Number is required";
    } else {
-     $website = test_input($_POST["website"]);
-     // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-       $websiteErr = "Invalid URL"; 
-     }
+     $number = test_input($_POST["number"]);
+     // check if name only contains letters and whitespace
    }
+  
 
    if (empty($_POST["comment"])) {
      $comment = "";
@@ -54,14 +51,19 @@ function test_input($data) {
 <h2>Team 1257 Challenge App</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-   Name: <input type="text" name="name" value="<?php echo $name;?>">
+   Competition: <input type="text" name="name" value="<?php echo $name;?>">
    <span class="error">* <?php echo $nameErr;?></span>
+   <br><br>
+   Number: <input type="text" name="number" value="<?php echo $number;?>">
+   <span class="error">* <?php echo $numberErr;?></span>
    <br><br>
    <input type="submit" name="submit" value="Submit"> 
 </form>
 
 <?php
 echo "<h2>Your Output:</h2>";
-echo $name;
-echo "<br>";
+//echo "$name $number";
+//echo "<br>";
+
+echo exec('/etc/frc/teaminfo.sh $name $number');
 ?>
