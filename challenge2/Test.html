@@ -1,0 +1,8 @@
+Team Number: <input type="text" name="number" value="<?php echo $number;?>">
+
+League: <input type="text" name="league" value="<?php echo $league;?>">
+
+<?php
+$output = shell_exec('/etc/frc/teaminfo.sh $league $number');
+echo <pre>$output</pre>
+?>
