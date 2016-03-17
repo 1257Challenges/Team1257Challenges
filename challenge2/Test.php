@@ -82,4 +82,3 @@ echo "<br>";
 
 echo exec('/etc/frc/teaminfo.sh $name $number');
 ?>
-<p contenteditable="true">bla</p>
