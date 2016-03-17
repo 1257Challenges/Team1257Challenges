@@ -13,7 +13,7 @@ authString="frc1257:challengeapp:1c"
 
 outputFile=$1$2
 
-if [ ! -f $outputFile ]
+if [ -f $outputFile ]
 then
         rm $outputFile
 fi
