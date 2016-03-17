@@ -49,23 +49,22 @@ function test_input($data) {
 ?>
 
 <h2>Team 1257 Challenge App</h2>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-   Competition: <input type="text" name="name" value="<?php echo $name;?>">
-   <span class="error">*<?php echo $nameErr;?></span>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+   Competition: <input type="text" name="competition" value="<?php echo $name;?>">
+   <span id="competition-clarify" class="error clarify">*<?php echo $nameErr;?></span>
    <br><br>
    Number: <input type="text" name="number" value="<?php echo $number;?>">
-   <span class="error">*<?php echo $numberErr;?></span>
+   <span id="num-clarify" class="error clarify">*<?php echo $numberErr;?></span>
    <br><br>
    <input type="submit" name="submit" value="Submit"> 
 </form>
 
 <?php
 echo "<h2>Your Output:</h2>";
-echo "$name $number";
-echo "<br>";
+//echo "$name $number";
+//echo "<br>";
 
 echo exec('./teaminfo.sh $name $number');
 ?>
 
-<p contenteditable="true">Bla</p>
 </body>
