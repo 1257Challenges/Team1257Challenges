@@ -1,0 +1,58 @@
+.error {
+   position: relative;
+   font-size: .5em;
+   top: -.75em;
+   font-style: italic;
+}
+body { 
+   background-image: url("http://p1.pichost.me/i/75/1995325.jpg");
+   background-attachment: fixed;
+   color: white;
+   text-align: center;
+   font-family: 'Cantarell', sans-serif;
+   font-size: 200%;
+   font-weight: 300;
+}
+body:after {
+    content: "";
+    display: block;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+}
+h2 {
+   color: white;
+   text-align: center;
+   font-family: 'Quicksand', sans-serif;
+   font-size: 200%;
+   font-weight: 100;
+}
+input[type="submit"] {
+   border: none;
+   outline: none;
+   font-weight: 400;
+   font-family: 'Cantarell', sans-serif;
+   background: white;
+   color: #610C7D;
+   border-radius: 3px;
+   font-size: .75em;
+   padding: .25em .5em;
+   cursor: pointer;
+   box-shadow: 1px 1px 5px black;
+}
+
+input[type="submit"]:hover {
+   background: #eee;
+}
+
+input[type="text"] {
+   border: none;
+   border-radius: 3px;
+   padding: .5em;
+   vertical-align: text-center;
+   font-family: 'Cantarell', sans-serif;
+   box-shadow: 1px 1px 5px black;
+   vertical-align: middle;
+   font-size: .6em;
+}
