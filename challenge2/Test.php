@@ -1,8 +1,24 @@
 <!DOCTYPE HTML> 
 <html>
 <head>
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px|Roboto:400,100,300' rel='stylesheet' type='text/css'>
 <style>
 .error {color: #FF0000;}
+body { 
+background-image: url("http://p1.pichost.me/i/75/1995325.jpg");
+color: white;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+font-size: 200%;
+font-weight: 100;
+}
+h2 {
+color: white;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+font-size: 200%;
+font-weight: 100;
+}
 </style>
 </head>
 <body> 
@@ -49,7 +65,6 @@ function test_input($data) {
 ?>
 
 <h2>Team 1257 Challenge App</h2>
-<p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
    Competition: <input type="text" name="name" value="<?php echo $name;?>">
    <span class="error">* <?php echo $nameErr;?></span>
@@ -62,8 +77,9 @@ function test_input($data) {
 
 <?php
 echo "<h2>Your Output:</h2>";
-//echo "$name $number";
-//echo "<br>";
+echo "$name $number";
+echo "<br>";
 
 echo exec('/etc/frc/teaminfo.sh $name $number');
 ?>
+<p contenteditable="true">bla</p>
