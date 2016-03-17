@@ -56,3 +56,27 @@ input[type="text"] {
    vertical-align: middle;
    font-size: .6em;
 }
+
+.clarify:after {
+    position: absolute;
+    background: rgba(255,255,255,0.15);
+    border-radius: 3px;
+    padding: .25em .5em;
+    left: 1em;
+    top: -1em;
+    display: none;
+    width: 150px;
+}
+
+#competition-clarify:after {
+    content: "(i.e. FRC, FLL, etc.)";
+}
+
+#num-clarify:after {
+    content: "(i.e. 1257, 118, 6969)";
+}
+
+input[name="competition"]:focus ~ #competition-clarify:after,
+input[name="number"]:focus ~ #num-clarify:after{
+    display: inline-block;
+}
