@@ -15,7 +15,7 @@ def findVictoriesAmount(ccwm1, ccwm2, ccwm3, wins1, wins2, wins3, losses1, losse
 	else:
 		lossesBeingZero = True
 	if not lossesBeingZero:
-		exponentValue = ccwm1 + 35 * math.log(wl1) + ccw2 + 35 * math.log(wl2) + ccw3 + 35 * math.log(wl3)
+		exponentValue = ccwm1 + 35 * math.log(wl1) + ccwm2 + 35 * math.log(wl2) + ccwm3 + 35 * math.log(wl3)
 		return 1.01 ** exponentValue
 	else:
 	# If any of the losses values are zero, returns zero to signify impossible functions
