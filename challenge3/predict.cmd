@@ -1,4 +1,4 @@
 @echo off
-java -jar FRCPredict2.jar
+java -jar FRCPredict.jar
 pause
 
