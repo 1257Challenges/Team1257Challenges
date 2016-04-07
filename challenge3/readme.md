@@ -13,4 +13,4 @@ This java-based program harnesses current event data from [The Blue Alliance](ht
 1. Download the repository as a zip file
 2. Navigate to the `challenge3` directory
 3. Move the `FRCPredict.jar` and the `predict.cmd` files onto your desktop
-4. Double click the prediction.sh file and follow the terminal prompt :D
+4. Double click the prediction.sh file and follow the terminal prompt :D 
