@@ -52,13 +52,12 @@ public class FRCPredict
 	{
 		double c1 = 0, c2 = 0, c3 = 0, v1 = 0, v2 = 0, v3 = 0;
 		
-		String[] teams = new String[3];
-		double[] winLossRatios = new double[3];
+		String[] teams = {a, b, c};
+		double[] winLossRatios = { 0.0, 0.0, 0.0 };
 		
 		c1 = stats.getJSONObject("ccwms").getDouble(a);//get CCWM values for each team from the stats JSONObject
 		c2 = stats.getJSONObject("ccwms").getDouble(b);
 		c3 = stats.getJSONObject("ccwms").getDouble(c);
-		System.out.println(c1 + "\t" + c2  + "\t" + c3);
 		
 		for(int j = 0; j < teams.length; j++)//for each team
 		{
@@ -69,26 +68,22 @@ public class FRCPredict
 				{
 					double wins = Double.parseDouble(rankings.getJSONArray(i).getString(7).split("-")[0]);//get the number of wins from the w-l-t string
 					double losses = Double.parseDouble(rankings.getJSONArray(i).getString(7).split("-")[1]);//get the number of losses from the w-l-t string
-					if(losses == 0.0)//prevents the program from dividing by 0
+					if(losses == 0.0)//prevents infinite scores
 					{
 						winLossRatios[j] = 1.0;
-						System.out.println("Here");
 					}
 					else//calculate win loss ratio
 					{
 						winLossRatios[j] = wins/losses;
-						System.out.println(wins/losses);
 					}
 				}
 			}
 		}
 		
-		//uses the team data to create a v value for the alliance
-		v1 = c1 + (35 * (Math.log(winLossRatios[0]) / Math.log(10.0)));
+		v1 = c1 + (35 * (Math.log(winLossRatios[0]) / Math.log(10.0)));//uses the team data to create a v value for the alliance
 		v2 = c2 + (35 * (Math.log(winLossRatios[1]) / Math.log(10.0)));
 		v3 = c3 + (35 * (Math.log(winLossRatios[2]) / Math.log(10.0)));
-		//returns the rating for the alliance
-		return Math.pow(1.01, v1 + v2 + v3);
+		return Math.pow(1.01, v1 + v2 + v3);//returns the rating for the alliance
 	}
 	public static void main(String[] args) throws IOException
 	{
@@ -214,7 +209,7 @@ public class FRCPredict
 			        		{
 			        			blueTeams[i] = "";
 			        			--i;
-			        			System.out.printf("Please enter an FRC who attended %s.\n", event);
+			        			System.out.printf("Please enter an FRC team who attended %s.\n", event);
 			        		}
 			        	}
 			        	//Get the team number for each red alliance team and ensure the input is valid
@@ -225,7 +220,7 @@ public class FRCPredict
 			        		{
 			        			redTeams[i] = "";
 			        			--i;
-			        			System.out.printf("Please enter an FRC who attended %s.\n", event);
+			        			System.out.printf("Please enter an FRC team who attended %s.\n", event);
 			        		}
 			        	}
 			        	
