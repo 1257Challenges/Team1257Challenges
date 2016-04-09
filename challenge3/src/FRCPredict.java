@@ -112,7 +112,7 @@ public class FRCPredict
 		    		{
 		    			break;
 		    		}
-		    		System.out.println("Please enter a valid match name.");
+		    		System.out.println("Please enter a valid event name.");
 				}
 		    	//creates an HTTP request for stats from the event specified
 		    	url = new URL("http://thebluealliance.com/api/v2/event/2016" + event + "/stats?X-TBA-App-Id=frc1257:challengeapp:1c");
@@ -228,8 +228,7 @@ public class FRCPredict
 			        	double vBlue = evalV(blueTeams[0], blueTeams[1], blueTeams[2]);//evaluate the v values for both alliances
 						double vRed = evalV(redTeams[0], redTeams[1], redTeams[2]);
 						float result = (float)(100 * (vBlue / (vBlue + vRed)));//use these v values to form a probability
-						System.out.println(result);
-						System.out.println("There is a " + String.format("%4f", result) + "% chance that the blue alliance will win.");
+						System.out.printf("There is a %.2f%% chance that the blue alliance will win.\n", result);
 			        }
 			        
 			        //if the user didn't specify a  valid mode, ask again
